@@ -1,0 +1,30 @@
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 100;
+    src: url("../public/fonts/iranyekan/Qs_Iranyekan\ thin.ttf");
+}
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 300;
+    src: url("../public/fonts/iranyekan/Qs_Iranyekan\ light.ttf");
+}
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/fonts/iranyekan/Qs_Iranyekan\ medium.ttf");
+}
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 600;
+    src: url("../public/fonts/iranyekan/Qs_Iranyekan\ bold.ttf");
+}
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 900;
+    src: url("../public/fonts/iranyekan/Qs_Iranyekan\ black.ttf");
+}
