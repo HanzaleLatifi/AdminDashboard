@@ -2,7 +2,14 @@
   "compilerOptions": {
     "jsx": "react",
     /* Visit https://aka.ms/tsconfig to read more about this file */
-
+    "paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/containers/*": ["./src/containers/*"],
+      "@/context/*": ["./src/context/*"],
+      "@/common/*": ["./src/common/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/utils/*": ["./src/utils/*"],
+    } ,
     /* Projects */
     // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
     // "composite": true,                                /* Enable constraints that allow a TypeScript project to be used with project references. */
