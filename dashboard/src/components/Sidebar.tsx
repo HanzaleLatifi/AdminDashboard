@@ -18,30 +18,30 @@ const Sidebar = () => {
   return (
         <>
                 {activeMenu ==true ? <div className="w-3/4 sm:w-72 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-white shadow-lg border-l"  >
-                  <div className="mt-4">
-                      {links.map((item) => (
-                        <div className='p-2' key={item.title}>
-                          <p className="text-gray-600 dark:text-gray-400 m-3 mt-3 uppercase">
-                            {item.title}
-                          </p>
-                          {item.links.map((link:any) => (
-                            <NavLink
-                              to={`/${link.path}`}
-                              key={link.name}
-                              onClick={handleCloseSideBar}
-                              style={({ isActive }) => ({
-                                borderRight: isActive ? `4px solid ${activeColor}` : '',
-                              })}
-                              className={({ isActive }) => (isActive ? activeLink : normalLink)}
-                            >
-                              {link.icon}
-                              <span className="capitalize ">{link.name}</span>
-                            </NavLink>
+                       <div className="mt-4">
+                          {links.map((item) => (
+                            <div className='p-2' key={item.title}>
+                              <p className="text-gray-600 dark:text-gray-400 m-3 mt-3 uppercase">
+                                {item.title}
+                              </p>
+                              {item.links.map((link:any) => (
+                                <NavLink
+                                  to={`/${link.path}`}
+                                  key={link.name}
+                                  onClick={handleCloseSideBar}
+                                  style={({ isActive }) => ({
+                                    borderRight: isActive ? `4px solid ${activeColor}` : '',
+                                  })}
+                                  className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                                >
+                                  {link.icon}
+                                  <span className="capitalize ">{link.name}</span>
+                                </NavLink>
+                              ))}
+                            </div>
                           ))}
-                        </div>
-                      ))}
-                  </div>
-                      </div> : <div className='w-0'></div>
+                      </div>
+                    </div> : <div className='w-0'></div>
                  }
         </>
   )
