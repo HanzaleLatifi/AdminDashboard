@@ -33,7 +33,7 @@ type propsTypes={
 }
 
 const ContextProvider = ({children}:propsTypes) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
