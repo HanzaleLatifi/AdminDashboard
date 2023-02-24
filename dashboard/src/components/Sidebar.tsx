@@ -1,5 +1,5 @@
 import React from 'react';
-import {HomeIcon , ClipboardDocumentListIcon,ShoppingBagIcon ,UserGroupIcon ,UserCircleIcon, CreditCardIcon,CalculatorIcon,ArrowRightCircleIcon } from '@heroicons/react/24/outline'
+// import {HomeIcon , ClipboardDocumentListIcon,ShoppingBagIcon ,UserGroupIcon ,UserCircleIcon, CreditCardIcon,CalculatorIcon,ArrowRightCircleIcon } from '@heroicons/react/24/outline'
 import {links} from '../data/dummy';
 import {NavLink} from 'react-router-dom';
 
@@ -17,7 +17,7 @@ const Sidebar = () => {
  
   return (
         <>
-                {activeMenu == true ? <div className="w-3/4 sm:w-72 fixed sm:relative h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-white shadow-lg border-l"  >
+                {activeMenu === true ? <div className="w-3/4 z-50 sm:w-72 fixed sm:relative h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-white shadow-lg border-l"  >
                        <div className="mt-4">
                           {links.map((item) => (
                             <div className='p-2' key={item.title}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes , Route , NavLink} from 'react-router-dom';
+import { Routes , Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import {Cog6ToothIcon} from '@heroicons/react/24/outline';
@@ -26,9 +26,8 @@ const App=()=>{
               <div className='flex'>
                   <Sidebar/>
                   <div className='w-full'>
-                      <header className='w-full bg-red-300'>
-                                  navbar
-                                  {/* <Navbar/> */}
+                      <header className='w-full'>
+                          <Navbar/>
                       </header>
                       <Routes>
                           <Route path="/dashboard" element={(<Home/>)} />
