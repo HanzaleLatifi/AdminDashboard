@@ -13,7 +13,7 @@ const App=()=>{
  
   const activeColor='#d90f52';
 
-  return ( <div className=''>
+  return ( <div className='overflow-x-hidden max-w-screen-2xl mx-auto'>
 
               <div className='z-50 fixed'>
                 <Tooltip title='تنظیمات' arrow >
