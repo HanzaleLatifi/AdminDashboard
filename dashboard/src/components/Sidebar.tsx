@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import {links} from '../data/dummy';
 import {NavLink} from 'react-router-dom';
 import { useMyContext, useMyContextActions } from '../context/ContextProvider';
@@ -12,12 +12,13 @@ const Sidebar = () => {
 
   const handleCloseSideBar=()=>{
     if (activeMenu !== undefined ) {
-      dispatch({type:'activeMenu'});
+      dispatch({type:'hideMenu'});
       
     }
-   
-    
   }
+
+
+  
   const activeColor='#d90f52'
   const activeLink = `flex items-center gap-2 px-4 py-4 md:py-1 text-[${activeColor}] text-md mx-2 my-1`;
   const normalLink = `flex items-center gap-2 px-4 py-4 md:py-2  text-md text-gray-400 dark:text-gray-200  mx-2 my-1`;

@@ -1,27 +1,46 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { useContext, useReducer, createContext } from "react";
 
 interface myContext {
-    activeMenu: false;
+    activeMenu:true;
     activeColor:'#d90f52'
+    screenSize:undefined
 }
 
 const MyContext = createContext<Partial<myContext>>({});
 const MyContextDispatcher = createContext<any>({});
 
 const initialState:myContext={
-    activeMenu:false,
-    activeColor:'#d90f52'
+    activeMenu:true,
+    activeColor:'#d90f52',
+    screenSize:undefined
+
+    
 }
 
 const reducer = (state:any=initialState, action:any) => {
     switch (action.type) {
       case "activeMenu": {
         return {
+          ...state,activeMenu:true 
+        };
+      }
+      case "hideMenu": {
+        return {
+          ...state,activeMenu:false 
+        };
+      }
+      case "toggleMenu":{
+        return {
           ...state,activeMenu:!state.activeMenu 
         };
       }
       
+      case "setScreenSize":{
+        return {
+          ...state , screenSize:action.payload
+        }
+      }
   
       default:
         return state;
@@ -34,6 +53,9 @@ type propsTypes={
 
 const ContextProvider = ({children}:propsTypes) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+ 
+  
 
   return (
     <>
