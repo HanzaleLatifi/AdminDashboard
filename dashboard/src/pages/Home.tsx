@@ -1,8 +1,10 @@
 import { useMyContext, useMyContextActions } from '../context/ContextProvider'
 import React from 'react';
-import {ArrowDownTrayIcon} from '@heroicons/react/24/outline'
+import {ArrowDownTrayIcon, EyeIcon} from '@heroicons/react/24/outline'
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import { PDFDownloadLink } from '@react-pdf/renderer';
+import {UserGroupIcon , CurrencyDollarIcon ,ShoppingCartIcon} from '@heroicons/react/24/outline';
+import PercentageCard from '../components/PercentageCard';
 
 // style for pdf File
 const styles = StyleSheet.create({
@@ -38,8 +40,8 @@ const Home = () => {
 
 
   return (
-    <div className='p-6'>
-       <div className="bg-white shadow-lg p-4 md:p-8  dark:text-gray-200 dark:bg-secondary-dark-bg h-56 md:h-44 rounded-xl w-full  bg-hero-pattern dark:bg-hero-dark-pattern bg-no-repeat bg-cover bg-center">
+    <div className='p-5'>
+       <section className="bg-white mb-12 md:mb-10 shadow-lg p-4 md:p-8  dark:text-gray-200 dark:bg-secondary-dark-bg h-56 md:h-44 rounded-xl w-full  bg-hero-pattern dark:bg-hero-dark-pattern bg-no-repeat bg-cover bg-center">
           <span className='text-gray-700 text-2xl  dark:text-gray-200 drop-shadow-xl' >
             خوش آمدید
           </span>
@@ -52,7 +54,14 @@ const Home = () => {
                 </button>
               </PDFDownloadLink>        
           </div>
-       </div>
+       </section>
+       <section className='grid md:grid-cols-4 grid-cols-1 gap-4  '>
+            <PercentageCard  icon={<CurrencyDollarIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={4} title={'میزان سود کل'} type="asc"/>
+            <PercentageCard  icon={<ShoppingCartIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={8} title={'کالاهای فروخته شده'} type="asc"/>
+            <PercentageCard  icon={<UserGroupIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={2} title={'مشتری های اضاف شده'} type="desc"/>
+            <PercentageCard  icon={<EyeIcon className='md:h-10 md:w-10 p-1 h-14 w-14 ' style={{color:activeColor}}/>} percent={6} title={'بازدید از فروشگاه'} type="asc"/>
+       </section>
+
     </div>
   )
 }
