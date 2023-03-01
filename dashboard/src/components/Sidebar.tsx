@@ -25,7 +25,7 @@ const Sidebar = () => {
  
   return (
         <>
-                {activeMenu ? <div className="w-3/4 transition-all duration-300  z-50 sm:w-72 fixed sm:relative h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-white shadow-lg border-l"  >
+                {activeMenu ? <div className="w-3/4 transition-all duration-300  z-40 sm:w-72 fixed sm:relative h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-white shadow-lg border-l"  >
                        <div className="mt-4 relative  ">
                           {links.map((item) => (
                             <div className='p-2' key={item.title}>

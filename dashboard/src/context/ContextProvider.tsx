@@ -2,9 +2,10 @@ import React  from "react";
 import { useContext, useReducer, createContext } from "react";
 
 interface myContext {
-    activeMenu:true;
-    activeColor:'#d90f52'
+    activeMenu:boolean;
+    activeColor:string
     screenSize:undefined
+    activeSetting:boolean
 }
 
 const MyContext = createContext<Partial<myContext>>({});
@@ -13,7 +14,8 @@ const MyContextDispatcher = createContext<any>({});
 const initialState:myContext={
     activeMenu:true,
     activeColor:'#d90f52',
-    screenSize:undefined
+    screenSize:undefined , 
+    activeSetting: false
 
     
 }
@@ -33,6 +35,11 @@ const reducer = (state:any=initialState, action:any) => {
       case "toggleMenu":{
         return {
           ...state,activeMenu:!state.activeMenu 
+        };
+      }
+      case "toggleSetting":{
+        return {
+          ...state,activeSetting:!state.activeSetting 
         };
       }
       
