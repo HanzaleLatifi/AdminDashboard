@@ -7,11 +7,11 @@ import {XMarkIcon} from '@heroicons/react/24/outline'
 
 const Sidebar = () => {
 
-  const {activeMenu}=useMyContext();
+  const {activeMenu , screenSize}=useMyContext();
   const dispatch=useMyContextActions();
 
   const handleCloseSideBar=()=>{
-    if (activeMenu !== undefined ) {
+    if (activeMenu !== undefined  && screenSize!==undefined && screenSize<900 ) {
       dispatch({type:'hideMenu'});
       
     }
