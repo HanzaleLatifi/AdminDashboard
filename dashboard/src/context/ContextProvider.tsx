@@ -13,7 +13,7 @@ const MyContextDispatcher = createContext<any>({});
 
 const initialState:myContext={
     activeMenu:true,
-    activeColor:'#d90f52',
+    activeColor:'#d946ef',
     screenSize:undefined , 
     activeSetting: false
 
@@ -46,6 +46,11 @@ const reducer = (state:any=initialState, action:any) => {
       case "setScreenSize":{
         return {
           ...state , screenSize:action.payload
+        }
+      }
+      case "setActiveColor":{
+        return {
+          ...state , activeColor:action.payload
         }
       }
   

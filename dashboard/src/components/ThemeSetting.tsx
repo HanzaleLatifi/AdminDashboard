@@ -1,12 +1,12 @@
-import { useMyContext } from '../context/ContextProvider';
+import { useMyContext, useMyContextActions } from '../context/ContextProvider';
 import React,{useState} from 'react';
 import { themeColors } from '../data/dummy';
 import { CheckIcon } from '@heroicons/react/24/outline';
 
 
 const ThemeSetting = () => {
- const {activeSetting}=useMyContext();
- const activeColor='#d946ef';
+ const {activeSetting , activeColor}=useMyContext();
+ const dispatch=useMyContextActions();
  const [value, setValue] = useState('light');
 
  const handleChange = (event : React.ChangeEvent<HTMLInputElement>) => {
@@ -20,8 +20,8 @@ const ThemeSetting = () => {
         <hr className='mb-4 '/>
         <div className='flex items-center gap-x-4 mb-10'>
             {themeColors.map((color)=>{
-                return  <button style={{backgroundColor:color.code}} className={`rounded-full  flex items-center justify-center  w-12 h-12  ${color.code=== activeColor ? 'ring-gray-400  ring-2 border-2 border-white' : ''}`}> 
-                                   <CheckIcon className={` h-7 w-7 text-white ${color.code=== activeColor ? 'block' : 'hidden'}`} />
+                return  <button onClick={()=>dispatch({type:'setActiveColor',payload:color.code})} style={{backgroundColor:color.code}} className={`rounded-full transition-all  flex items-center justify-center  w-12 h-12 hover:shadow-lg focus:shadow-lg  ${color.code=== activeColor ? 'ring-gray-400  ring-2 border-2 border-white' : ''}`}> 
+                                   <CheckIcon className={` h-7  w-7 text-white ${color.code=== activeColor ? 'block' : 'hidden'}`} />
                          </button>
 
             })}      
