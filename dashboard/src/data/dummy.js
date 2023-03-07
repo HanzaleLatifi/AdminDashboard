@@ -60,3 +60,9 @@ export const links = [
       ],
     },
   ];
+
+  export const themeColors=[{title:'blue',code:'#0ea5e9'},
+                            {title:'purple',code:'#a855f7'} ,
+                            {title:'fuchsia',code:'#d946ef'} ,
+                            {title:'pink',code:'#ec4899'} 
+                           ]

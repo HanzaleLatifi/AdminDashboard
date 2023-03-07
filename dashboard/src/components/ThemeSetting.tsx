@@ -1,14 +1,12 @@
 import { useMyContext } from '../context/ContextProvider';
 import React,{useState} from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
+import { themeColors } from '../data/dummy';
+import { CheckIcon } from '@heroicons/react/24/outline';
 
 
 const ThemeSetting = () => {
  const {activeSetting}=useMyContext();
- const activeColor='#d90f52';
+ const activeColor='#d946ef';
  const [value, setValue] = useState('light');
 
  const handleChange = (event : React.ChangeEvent<HTMLInputElement>) => {
@@ -16,15 +14,17 @@ const ThemeSetting = () => {
  };
 
   return (
-    <div className={`fixed transition-all duration-300 bg-white shadow-2xl left-0 h-screen ${activeSetting ? 'w-72 py-6 px-4' :'w-0' } z-40`}>
-        <h3 className='text-lg font-semibold mb-12' style={{color:activeColor}}>تنظیمات</h3>
+    <div className={`fixed transition-all duration-300 bg-f bg-white shadow-2xl left-0 h-screen ${activeSetting ? 'w-72 py-6 px-4' :'w-0' } z-40`}>
+        <h3 className='text-lg font-semibold mb-12 text-gray-500'>تنظیمات</h3>
         <p className='mb-2'>انتخاب رنگ</p>
         <hr className='mb-4 '/>
         <div className='flex items-center gap-x-4 mb-10'>
-            <span className='rounded-full bg-red-300 w-12 h-12'>1</span>
-            <span className='rounded-full bg-red-300 w-12 h-12'>1</span>
-            <span className='rounded-full bg-red-300 w-12 h-12'>1</span>
-            <span className='rounded-full bg-red-300 w-12 h-12'>1</span>
+            {themeColors.map((color)=>{
+                return  <button style={{backgroundColor:color.code}} className={`rounded-full  flex items-center justify-center  w-12 h-12  ${color.code=== activeColor ? 'ring-gray-400  ring-2 border-2 border-white' : ''}`}> 
+                                   <CheckIcon className={` h-7 w-7 text-white ${color.code=== activeColor ? 'block' : 'hidden'}`} />
+                         </button>
+
+            })}      
         </div>
         <p className='mb-2'>انتخاب تم</p>
         <hr className='mb-4 '/>
