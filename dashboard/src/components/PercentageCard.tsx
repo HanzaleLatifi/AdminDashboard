@@ -13,7 +13,8 @@ type propsTypes={
 
 const PercentageCard =({type , title , percent , icon}:propsTypes) => {
   return (
-            <div className={`bg-gradient-to-t from-pink-200  rounded-lg p-4 shadow-md`}>
+            <div className={`  rounded-lg p-4 shadow-md relative  `}>
+                {/* <div className='absolute -bottom-1 w-1/2 bg-gray-600 rounded-full h-2 drop-shadow-md left-1/2 -translate-x-1/2 '/> */}
                 <div className='flex items-center justify-between mb-8'>
                     <p className='text'>{title}</p>
                     <span className='bg-white p-1 shadow-md rounded-full '>

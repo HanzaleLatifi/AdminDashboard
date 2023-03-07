@@ -7,13 +7,13 @@ import Tooltip from '@mui/material/Tooltip';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import ThemeSetting from './components/ThemeSetting';
-import {useMyContextActions } from './context/ContextProvider';
+import {useMyContext, useMyContextActions } from './context/ContextProvider';
 
 
 
 const App=()=>{
  
-  const activeColor='#d90f52';
+  const {activeColor}=useMyContext();
   const dispatch=useMyContextActions();
 
   return ( <div className='overflow-x-hidden max-w-screen-2xl mx-auto'>

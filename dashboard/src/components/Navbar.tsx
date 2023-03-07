@@ -5,9 +5,8 @@ import { useMyContext , useMyContextActions } from '../context/ContextProvider';
 
 
 const Navbar = () => {
-  const activeColor='#d90f52';
   let userLogin=true ;
-  const {activeMenu ,screenSize}=useMyContext();
+  const {activeColor ,screenSize}=useMyContext();
   const dispatch=useMyContextActions();
 
   useEffect(() => {

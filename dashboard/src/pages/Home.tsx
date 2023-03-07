@@ -34,9 +34,8 @@ const MyDocument = () => (
 );
 
 const Home = () => {
-  const state=useMyContext();
+  const {activeColor}=useMyContext();
   const dispatch=useMyContextActions();
-  const activeColor='#d90f52';
 
 
   return (
@@ -56,6 +55,7 @@ const Home = () => {
           </div>
        </section>
        <section className='grid md:grid-cols-4 grid-cols-1 gap-4  '>
+        
             <PercentageCard  icon={<CurrencyDollarIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={4} title={'میزان سود کل'} type="asc"/>
             <PercentageCard  icon={<ShoppingCartIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={8} title={'کالاهای فروخته شده'} type="asc"/>
             <PercentageCard  icon={<UserGroupIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={2} title={'مشتری های اضاف شده'} type="desc"/>

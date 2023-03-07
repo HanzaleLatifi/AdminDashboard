@@ -7,7 +7,7 @@ import {XMarkIcon} from '@heroicons/react/24/outline'
 
 const Sidebar = () => {
 
-  const {activeMenu , screenSize}=useMyContext();
+  const {activeMenu , screenSize , activeColor}=useMyContext();
   const dispatch=useMyContextActions();
 
   const handleCloseSideBar=()=>{
@@ -19,7 +19,6 @@ const Sidebar = () => {
 
 
   
-  const activeColor='#d90f52'
   const activeLink = `flex items-center gap-2 px-4 py-4 md:py-1 text-[${activeColor}] text-md mx-2 my-1`;
   const normalLink = `flex items-center gap-2 px-4 py-4 md:py-2  text-md text-gray-400 dark:text-gray-200  mx-2 my-1`;
  
