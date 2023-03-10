@@ -16,7 +16,7 @@ const App=()=>{
   const {activeColor , theme}=useMyContext();
   const dispatch=useMyContextActions();
 
-  return ( <div className={` overflow-x-hidden max-w-screen-2xl mx-auto ${theme==='dark'?'dark':'light'}`}>
+  return ( <div className={` overflow-x-hidden dark:bg-gray-800  max-w-screen-2xl mx-auto ${theme==='dark'?'dark':'light'}`}>
 
               <div className='z-50 fixed'>
                 <Tooltip title='تنظیمات' arrow >
@@ -28,10 +28,10 @@ const App=()=>{
 
               <ThemeSetting/> 
 
-              <div className='flex'>
+              <div className='flex dark:bg-gray-800 transition-all'>
                   <Sidebar/>
                   <div className='w-full'>
-                      <header className='w-full'>
+                      <header className='w-full dark:bg-gray-700'>
                           <Navbar/>
                       </header>
                       

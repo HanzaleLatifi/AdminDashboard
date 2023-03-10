@@ -40,11 +40,11 @@ const Home = () => {
 
   return (
     <div className='p-5'>
-       <section className="bg-white mb-12 md:mb-10 shadow-lg p-4 md:p-8  dark:text-gray-200 dark:bg-secondary-dark-bg h-56 md:h-44 rounded-xl w-full  bg-hero-pattern dark:bg-hero-dark-pattern bg-no-repeat bg-cover bg-center">
-          <span className='text-gray-700 text-2xl  dark:text-gray-200 drop-shadow-xl' >
+       <section className="bg-white mb-12 md:mb-10 shadow-lg p-4 md:p-8  dark:text-gray-200 dark:bg-secondary-dark-bg h-56 md:h-44 rounded-xl w-full  bg-hero-pattern dark:bg-hero-dark-pattern bg-no-repeat bg-cover bg-center transition-all">
+          <span className='text-gray-700  text-2xl  dark:text-white drop-shadow-xl' >
             خوش آمدید
           </span>
-          <p className='md:mt-2 mt-4 text-gray-700'>برای دانلود فایل پی دی اف حاوی اطلاعات خرید و فروش هفته جاری بر روی گزینه دریافت کلیک نمایید . </p>
+          <p className='md:mt-2 mt-4 text-gray-700 dark:text-gray-200'>برای دانلود فایل پی دی اف حاوی اطلاعات خرید و فروش هفته جاری بر روی گزینه دریافت کلیک نمایید . </p>
           <div className='w-full  flex justify-end  px-2 mt-4'>
               <PDFDownloadLink document={<MyDocument/>} fileName="dashboardAdmin.pdf">
                 <button className='text-white flex gap-3 rounded-xl px-6 py-2.5 text-lg' style={{backgroundColor:activeColor}}>

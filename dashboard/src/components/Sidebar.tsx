@@ -19,16 +19,16 @@ const Sidebar = () => {
 
 
   
-  const activeLink = `flex items-center gap-2 px-4 py-4 md:py-1 text-[${activeColor}] text-md mx-2 my-1`;
+  const activeLink = `flex  rounded-md dark:text-white items-center gap-2 px-4 py-4 md:py-2  text-md mx-2 my-1 bg-gradient-to-l from-gray-100 to-white dark:bg-gradient-to-l dark:from-gray-800 dark:to-gray-700`;
   const normalLink = `flex items-center gap-2 px-4 py-4 md:py-2  text-md text-gray-400 dark:text-gray-200  mx-2 my-1`;
  
   return (
         <>
-                {activeMenu ? <div className="w-3/4 transition-all duration-300  z-40 sm:w-72 fixed sm:relative h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-white shadow-lg border-l"  >
+                {activeMenu ? <div className="w-3/4 transition-all duration-300  z-40 sm:w-72 fixed sm:relative h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-white dark:bg-gray-700 dark:shadow-gray-400 dark:border-none shadow-md border-l"  >
                        <div className="mt-4 relative  ">
                           {links.map((item) => (
                             <div className='p-2' key={item.title}>
-                              <p className="text-gray-600 dark:text-gray-400 m-3 mt-3 uppercase">
+                              <p className="text-gray-600  dark:text-gray-400 m-3 mt-3 uppercase">
                                 {item.title}
                               </p>
                               {item.links.map((link:any) => (
@@ -47,7 +47,7 @@ const Sidebar = () => {
                               ))}
                             </div>
                           ))}
-                          <span onClick={handleCloseSideBar} className='absolute text-red-600 sm:hidden left-4 top-4'><XMarkIcon className='h-8 w-8'/></span>
+                          <span onClick={handleCloseSideBar} className='absolute  text-red-600 sm:hidden left-4 top-4'><XMarkIcon className='h-8 w-8'/></span>
                       </div>
                     </div> : <div className='w-0 duration-300  transition-all'></div>
                  }
