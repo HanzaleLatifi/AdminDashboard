@@ -13,7 +13,7 @@ import {useMyContext, useMyContextActions } from './context/ContextProvider';
 
 const App=()=>{
  
-  const {activeColor}=useMyContext();
+  const {activeColor , theme}=useMyContext();
   const dispatch=useMyContextActions();
 
   return ( <div className='overflow-x-hidden max-w-screen-2xl mx-auto'>

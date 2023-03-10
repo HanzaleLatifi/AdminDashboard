@@ -5,14 +5,13 @@ import { CheckIcon } from '@heroicons/react/24/outline';
 
 
 const ThemeSetting = () => {
- const {activeSetting , activeColor}=useMyContext();
+ const {activeSetting , activeColor ,theme}=useMyContext();
  const dispatch=useMyContextActions();
- const [value, setValue] = useState('light');
 
  const handleChange = (event : React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
+    dispatch({type:'changeTheme',payload:(event.target as HTMLInputElement).value})
  };
-
+ 
   return (
     <div className={`fixed transition-all duration-300 bg-f bg-white shadow-2xl left-0 h-screen ${activeSetting ? 'w-72 py-6 px-4' :'w-0' } z-40`}>
         <h3 className='text-lg font-semibold mb-12 text-gray-500'>تنظیمات</h3>
@@ -30,11 +29,11 @@ const ThemeSetting = () => {
         <hr className='mb-4 '/>
         <div className="flex flex-row gap-x-6">
             <div >
-                <input id='light' type="radio" name="color" value="light" className="bg-gray-200 rounded-full ml-2 p-2 cursor-pointer" />
+                <input onChange={handleChange} id='light' type="radio" name="color" value="light" className="bg-gray-200 rounded-full ml-2 p-2 cursor-pointer" />
                 <label htmlFor='light' className='cursor-pointer'>روشن</label>
             </div>
             <div>
-                <input id='dark' type="radio" name="color" value="dark" className="bg-gray-200 rounded-full ml-2 p-2 cursor-pointer " />
+                <input onChange={handleChange} id='dark' type="radio" name="color" value="dark" className="bg-gray-200 rounded-full ml-2 p-2 cursor-pointer " />
                 <label htmlFor='dark' className='cursor-pointer'>تیره</label>
             </div>
             

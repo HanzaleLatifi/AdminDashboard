@@ -6,6 +6,7 @@ interface myContext {
     activeColor:string
     screenSize:undefined
     activeSetting:boolean
+    theme:string
 }
 
 const MyContext = createContext<Partial<myContext>>({});
@@ -15,7 +16,9 @@ const initialState:myContext={
     activeMenu:true,
     activeColor:'#d946ef',
     screenSize:undefined , 
-    activeSetting: false
+    activeSetting: false,
+    theme:'light'
+
 
     
 }
@@ -51,6 +54,11 @@ const reducer = (state:any=initialState, action:any) => {
       case "setActiveColor":{
         return {
           ...state , activeColor:action.payload
+        }
+      }
+      case "changeTheme":{
+        return {
+          ...state ,theme:action.payload
         }
       }
   
