@@ -16,7 +16,7 @@ const App=()=>{
   const {activeColor , theme}=useMyContext();
   const dispatch=useMyContextActions();
 
-  return ( <div className='overflow-x-hidden max-w-screen-2xl mx-auto'>
+  return ( <div className={` overflow-x-hidden max-w-screen-2xl mx-auto ${theme==='dark'?'dark':'light'}`}>
 
               <div className='z-50 fixed'>
                 <Tooltip title='تنظیمات' arrow >
