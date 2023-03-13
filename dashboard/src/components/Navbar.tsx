@@ -26,7 +26,7 @@ const Navbar = () => {
   
 
   return (
-    <nav className='md:px-4  dark:bg-gray-700 px-2 py-4 md:py-2 flex items-center justify-between border-b dark:border-none dark:shadow-2xl dark:text-gray-200 sm:mx-4 mx-2'>
+    <nav className='md:px-8  dark:bg-gray-700 px-2 py-4 md:py-2 flex items-center justify-between border-b dark:border-none dark:shadow-2xl dark:text-gray-200 sm:mx-4 mx-2'>
       <div className='flex gap-x-3'>
           <button onClick={()=>dispatch({type:'toggleMenu'})}>
               <Bars3Icon className='h-7 w-7'/>

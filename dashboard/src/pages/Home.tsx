@@ -5,6 +5,7 @@ import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import {UserGroupIcon , CurrencyDollarIcon ,ShoppingCartIcon} from '@heroicons/react/24/outline';
 import PercentageCard from '../components/PercentageCard';
+import CircularChart from '../components/charts/PieCharts';
 
 // style for pdf File
 const styles = StyleSheet.create({
@@ -39,7 +40,9 @@ const Home = () => {
 
 
   return (
-    <div className='p-5'>
+    <div className='p-8'>
+
+      {/* welcome */}
        <section className="bg-white mb-12 md:mb-10 shadow-lg p-4 md:p-8  dark:text-gray-200 dark:bg-secondary-dark-bg h-56 md:h-44 rounded-xl w-full  bg-hero-pattern dark:bg-hero-dark-pattern bg-no-repeat bg-cover bg-center transition-all">
           <span className='text-gray-700  text-2xl  dark:text-white drop-shadow-xl' >
             خوش آمدید
@@ -54,12 +57,58 @@ const Home = () => {
               </PDFDownloadLink>        
           </div>
        </section>
-       <section className='grid md:grid-cols-4 grid-cols-1 gap-4  '>
-        
+       <section className='mb-12 grid md:grid-cols-4 grid-cols-1 gap-4  '>
             <PercentageCard  icon={<CurrencyDollarIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={4} title={'میزان سود کل'} type="asc"/>
             <PercentageCard  icon={<ShoppingCartIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={8} title={'کالاهای فروخته شده'} type="asc"/>
             <PercentageCard  icon={<UserGroupIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={2} title={'مشتری های اضاف شده'} type="desc"/>
             <PercentageCard  icon={<EyeIcon className='md:h-10 md:w-10 p-1 h-14 w-14 ' style={{color:activeColor}}/>} percent={6} title={'بازدید از فروشگاه'} type="asc"/>
+       </section>
+
+       {/* charts */}
+       <section className=' grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4'>
+
+            <div className='shadow-lg h-60 rounded-lg  font-semibold p-4 dark:shadow-purple-100 dark:shadow-md '>
+             <h3 className=' pb-2 border-b dark:border-gray-700 dark:text-gray-200'>نمودار سنی</h3>
+              <div className='flex h-full items-center '>
+                <div className='w-1/2'>
+                    <ul className='font-light space-y-3 dark:text-gray-300 '>
+                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-violet-700 w-3 h-3 rounded-full'></span> بالای 40 سال  </li> 
+                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-pink-400 w-3 h-3 rounded-full'></span> بین 20 تا 40  </li> 
+                        <li className="flex tracking-tight items-center gap-1.5 "><span className='bg-fuchsia-700 w-3 h-3 rounded-full'></span> زیر 20 سال  </li> 
+                    </ul>
+                </div>
+                <CircularChart data={[{name:'بالای 40 سال' , value:25},{name:'بین 20 تا 40 سال' , value:55},{name:'زیر 20 سال' , value:20}]}/>
+              </div> 
+            </div>
+
+            <div className='shadow-lg h-60 rounded-lg  font-semibold p-4 dark:shadow-purple-100 dark:shadow-md '>
+             <h3 className=' pb-2 border-b dark:border-gray-700 dark:text-gray-200'>نمودار سنی</h3>
+              <div className='flex h-full items-center '>
+                <div className='w-1/2'>
+                    <ul className='font-light space-y-3 dark:text-gray-300 '>
+                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-violet-700 w-3 h-3 rounded-full'></span> بالای 40 سال  </li> 
+                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-pink-400 w-3 h-3 rounded-full'></span> بین 20 تا 40  </li> 
+                        <li className="flex tracking-tight items-center gap-1.5 "><span className='bg-fuchsia-700 w-3 h-3 rounded-full'></span> زیر 20 سال  </li> 
+                    </ul>
+                </div>
+                <CircularChart data={[{name:'بالای 40 سال' , value:25},{name:'بین 20 تا 40 سال' , value:55},{name:'زیر 20 سال' , value:20}]}/>
+              </div> 
+            </div>
+
+            <div className='shadow-lg h-60 rounded-lg  font-semibold p-4 dark:shadow-purple-100 dark:shadow-md '>
+             <h3 className=' pb-2 border-b dark:border-gray-700 dark:text-gray-200'>نمودار سنی</h3>
+              <div className='flex h-full items-center '>
+                <div className='w-1/2'>
+                    <ul className='font-light space-y-3 dark:text-gray-300 '>
+                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-violet-700 w-3 h-3 rounded-full'></span> بالای 40 سال  </li> 
+                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-pink-400 w-3 h-3 rounded-full'></span> بین 20 تا 40  </li> 
+                        <li className="flex tracking-tight items-center gap-1.5 "><span className='bg-fuchsia-700 w-3 h-3 rounded-full'></span> زیر 20 سال  </li> 
+                    </ul>
+                </div>
+                <CircularChart data={[{name:'بالای 40 سال' , value:25},{name:'بین 20 تا 40 سال' , value:55},{name:'زیر 20 سال' , value:20}]}/>
+              </div>    
+            </div>
+
        </section>
 
     </div>
