@@ -24,7 +24,8 @@ const Sidebar = () => {
  
   return (
         <>
-                {activeMenu ? <div className="w-3/4 transition-all duration-300  z-40 sm:w-72 fixed sm:relative h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-white dark:bg-gray-700 dark:shadow-gray-400 dark:border-none shadow-md border-l"  >
+                {activeMenu ?<div className='md:h-auto w-3/4 sm:w-72 fixed sm:relative h-screen bg-white dark:bg-gray-700 dark:shadow-gray-400 dark:border-none shadow-md border-l  transition-all duration-300  z-40'>
+                  <div className=" md:overflow-hidden h-screen overflow-auto md:hover:overflow-auto pb-10 "  >
                        <div className="mt-4 relative  ">
                           {links.map((item) => (
                             <div className='p-2' key={item.title}>
@@ -49,7 +50,8 @@ const Sidebar = () => {
                           ))}
                           <span onClick={handleCloseSideBar} className='absolute  text-red-600 sm:hidden left-4 top-4'><XMarkIcon className='h-8 w-8'/></span>
                       </div>
-                    </div> : <div className='w-0 duration-300  transition-all'></div>
+                    </div>
+                </div>  : <div className='w-0 duration-300  transition-all'></div>
                  }
         </>
   )
