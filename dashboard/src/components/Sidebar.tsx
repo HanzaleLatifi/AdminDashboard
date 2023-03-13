@@ -24,34 +24,34 @@ const Sidebar = () => {
  
   return (
         <>
-                {activeMenu ?<div className='md:h-auto w-3/4 sm:w-72 fixed sm:relative h-screen bg-white dark:bg-gray-700 dark:shadow-gray-400 dark:border-none shadow-md border-l  transition-all duration-300  z-40'>
-                  <div className=" md:overflow-hidden h-screen overflow-auto md:hover:overflow-auto pb-10 "  >
-                       <div className="mt-4 relative  ">
-                          {links.map((item) => (
-                            <div className='p-2' key={item.title}>
-                              <p className="text-gray-600  dark:text-gray-400 m-3 mt-3 uppercase">
-                                {item.title}
-                              </p>
-                              {item.links.map((link:any) => (
-                                <NavLink
-                                  to={`/${link.path}`}
-                                  key={link.name}
-                                  onClick={handleCloseSideBar}
-                                  style={({ isActive }) => ({
-                                    borderRight: isActive ? `4px solid ${activeColor}` : '',
-                                  })}
-                                  className={({ isActive }) => (isActive ? activeLink : normalLink)}
-                                >
-                                  {link.icon}
-                                  <span className="capitalize ">{link.name}</span>
-                                </NavLink>
-                              ))}
-                            </div>
-                          ))}
-                          <span onClick={handleCloseSideBar} className='absolute  text-red-600 sm:hidden left-4 top-4'><XMarkIcon className='h-8 w-8'/></span>
-                      </div>
-                    </div>
-                </div>  : <div className='w-0 duration-300  transition-all'></div>
+              {activeMenu ? <div className='md:h-auto w-3/4 sm:w-72 fixed sm:relative h-screen bg-white dark:bg-gray-700 dark:shadow-gray-400 dark:border-none shadow-md border-l  transition-all duration-300  z-40'>
+                                <div className=" md:overflow-hidden h-screen overflow-auto md:hover:overflow-auto pb-10 "  >
+                                    <div className="mt-4 relative  ">
+                                        {links.map((item) => (
+                                          <div className='p-2' key={item.title}>
+                                            <p className="text-gray-600  dark:text-gray-400 m-3 mt-3 uppercase">
+                                              {item.title}
+                                            </p>
+                                            {item.links.map((link:any) => (
+                                              <NavLink
+                                                to={`/${link.path}`}
+                                                key={link.name}
+                                                onClick={handleCloseSideBar}
+                                                style={({ isActive }) => ({
+                                                  borderRight: isActive ? `4px solid ${activeColor}` : '',
+                                                })}
+                                                className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                                              >
+                                                {link.icon}
+                                                <span className="capitalize ">{link.name}</span>
+                                              </NavLink>
+                                            ))}
+                                          </div>
+                                        ))}
+                                        <span onClick={handleCloseSideBar} className='absolute  text-red-600 sm:hidden left-4 top-4'><XMarkIcon className='h-8 w-8'/></span>
+                                    </div>
+                                 </div>
+                             </div>  : <div className='w-0 duration-300  transition-all'></div>
                  }
         </>
   )

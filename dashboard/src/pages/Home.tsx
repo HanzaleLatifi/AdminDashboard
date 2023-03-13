@@ -69,15 +69,17 @@ const Home = () => {
 
             <div className='shadow-lg h-60 rounded-lg  font-semibold p-4 dark:shadow-purple-100 dark:shadow-md '>
              <h3 className=' pb-2 border-b dark:border-gray-700 dark:text-gray-200'>نمودار سنی</h3>
-              <div className='flex h-full items-center '>
-                <div className='w-1/2'>
-                    <ul className='font-light space-y-3 dark:text-gray-300 '>
+              <div className='flex h-full items-center justify-between '>
+                <div className='w-1/2 h-full flex items-center '>
+                    <ul className='font-light text-sm  space-y-3 dark:text-gray-300 '>
                         <li className="flex tracking-tight items-center gap-1.5"><span className='bg-violet-700 w-3 h-3 rounded-full'></span> بالای 40 سال  </li> 
                         <li className="flex tracking-tight items-center gap-1.5"><span className='bg-pink-400 w-3 h-3 rounded-full'></span> بین 20 تا 40  </li> 
                         <li className="flex tracking-tight items-center gap-1.5 "><span className='bg-fuchsia-700 w-3 h-3 rounded-full'></span> زیر 20 سال  </li> 
                     </ul>
                 </div>
-                <CircularChart data={[{name:'بالای 40 سال' , value:25},{name:'بین 20 تا 40 سال' , value:55},{name:'زیر 20 سال' , value:20}]}/>
+                <div className='w-1/2 flex items-center justify-center '>
+                  <CircularChart data={[{name:'بالای 40 سال' , value:25},{name:'بین 20 تا 40 سال' , value:55},{name:'زیر 20 سال' , value:20}]}/>
+                </div>
               </div> 
             </div>
 

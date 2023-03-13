@@ -14,7 +14,7 @@ const COLORS = ['#6d28d9', '#f472b6', '#a21caf'];
 
 const CircularChart: React.FC<Props> = ({ data }) => {
   return (
-    <ResponsiveContainer className=' -ml-6' width={'100%'} height={'100%'} >
+    <ResponsiveContainer  minWidth={200} minHeight={200} width={'100%'} height={'100%'} >
         <PieChart >
         <Pie
             isAnimationActive={true}
