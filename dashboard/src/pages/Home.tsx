@@ -6,6 +6,7 @@ import { PDFDownloadLink } from '@react-pdf/renderer';
 import {UserGroupIcon , CurrencyDollarIcon ,ShoppingCartIcon} from '@heroicons/react/24/outline';
 import PercentageCard from '../components/PercentageCard';
 import CircularChart from '../components/charts/PieCharts';
+import AreaChartComponent from '../components/charts/AreaChart';
 
 // style for pdf File
 const styles = StyleSheet.create({
@@ -65,9 +66,9 @@ const Home = () => {
        </section>
 
        {/* charts */}
-       <section className=' grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4'>
+       <section className=' grid grid-cols-1 md:grid-cols-3 md:gap-x-6 gap-y-4 '>
 
-            <div className='shadow-lg h-60 rounded-lg  font-semibold p-4 dark:shadow-purple-100 dark:shadow-md '>
+            <div className='shadow-lg h-72 rounded-lg  font-semibold p-4 dark:shadow-purple-100 dark:shadow-md '>
              <h3 className=' pb-2 border-b dark:border-gray-700 dark:text-gray-200'>نمودار سنی</h3>
               <div className='flex h-full items-center justify-between '>
                 <div className='w-1/2 h-full flex items-center '>
@@ -83,33 +84,14 @@ const Home = () => {
               </div> 
             </div>
 
-            <div className='shadow-lg h-60 rounded-lg  font-semibold p-4 dark:shadow-purple-100 dark:shadow-md '>
-             <h3 className=' pb-2 border-b dark:border-gray-700 dark:text-gray-200'>نمودار سنی</h3>
-              <div className='flex h-full items-center '>
-                <div className='w-1/2'>
-                    <ul className='font-light space-y-3 dark:text-gray-300 '>
-                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-violet-700 w-3 h-3 rounded-full'></span> بالای 40 سال  </li> 
-                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-pink-400 w-3 h-3 rounded-full'></span> بین 20 تا 40  </li> 
-                        <li className="flex tracking-tight items-center gap-1.5 "><span className='bg-fuchsia-700 w-3 h-3 rounded-full'></span> زیر 20 سال  </li> 
-                    </ul>
-                </div>
-                <CircularChart data={[{name:'بالای 40 سال' , value:25},{name:'بین 20 تا 40 سال' , value:55},{name:'زیر 20 سال' , value:20}]}/>
+            <div className='shadow-lg col-span-2 h-72 rounded-lg  font-semibold p-4  dark:shadow-purple-100 dark:shadow-md '>
+             <h3 className=' pb-2 border-b dark:border-gray-700 dark:text-gray-200'>نمودار فروش</h3>
+               <div className='w-full h-52 mt-4 px-4 mx-4'>     
+                <AreaChartComponent activeColor={activeColor} data={[{name:'بالای 40 سال' , value:25},{name:'بین 20 تا 40 سال' , value:55},{name:'زیر 20 سال' , value:20},{name:'زیر 10 سال' , value:40}]}/>
               </div> 
             </div>
 
-            <div className='shadow-lg h-60 rounded-lg  font-semibold p-4 dark:shadow-purple-100 dark:shadow-md '>
-             <h3 className=' pb-2 border-b dark:border-gray-700 dark:text-gray-200'>نمودار سنی</h3>
-              <div className='flex h-full items-center '>
-                <div className='w-1/2'>
-                    <ul className='font-light space-y-3 dark:text-gray-300 '>
-                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-violet-700 w-3 h-3 rounded-full'></span> بالای 40 سال  </li> 
-                        <li className="flex tracking-tight items-center gap-1.5"><span className='bg-pink-400 w-3 h-3 rounded-full'></span> بین 20 تا 40  </li> 
-                        <li className="flex tracking-tight items-center gap-1.5 "><span className='bg-fuchsia-700 w-3 h-3 rounded-full'></span> زیر 20 سال  </li> 
-                    </ul>
-                </div>
-                <CircularChart data={[{name:'بالای 40 سال' , value:25},{name:'بین 20 تا 40 سال' , value:55},{name:'زیر 20 سال' , value:20}]}/>
-              </div>    
-            </div>
+            
 
        </section>
 
