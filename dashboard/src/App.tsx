@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import ThemeSetting from './components/ThemeSetting';
 import {useMyContext, useMyContextActions } from './context/ContextProvider';
+import Products from './pages/Products';
 
 
 
@@ -37,7 +38,7 @@ const App=()=>{
                       
                       <Routes>
                           <Route path="/dashboard" element={(<Home/>)} />
-                          <Route path="/products" element={(<Home/>)} />
+                          <Route path="/products" element={(<Products/>)} />
                           <Route path="/customers" element={(<Home/>)} />
                           <Route path="/orders" element={(<Home/>)} />
                           <Route path="/calculater" element={(<Home/>)} />
