@@ -68,11 +68,11 @@ export const links = [
                            ]
 
   ;
-  export const products=[ {title:'ساویج دیور',category:'ادکلن',id:'7800',count:10 , price:'798000',imgSrc:'/images/sauvage.jpg'},
-                          {title:' ضدلک',category:'کرم',id:'3248',count:50 , price:'92000',imgSrc:'/images/zedlak.jpg'},
-                          {title:'کول واتر',category:'ادکلن',id:'8911',count:45 , price:'299000',imgSrc:'/images/coolwater.jpg'},
-                          {title:'شبنم',category:'شامپو',id:'3966',count:80 , price:'24000',imgSrc:'/images/shabnam.jpg'},
-                          {title:'اسپلندور',category:'ادکلن',id:'1397',count:15 , price:'600000',imgSrc:'/images/spelendor.jpg'},
-                          {title:'تام فورد',category:'ادکلن',id:'5202',count:9 , price:'998000',imgSrc:'/images/tomford.jpg'},
-                          {title:'کلیر',category:'شامپو',id:'3000',count:62, price:'130000',imgSrc:'/images/clear.jpg'},   
+  export const products=[ {imgSrc:'/images/sauvage.jpg',title:'ساویج دیور',category:'ادکلن',id:'7800',count:10 , price:798000},
+                          {imgSrc:'/images/zedlak.jpg',title:' ضدلک',category:'کرم',id:'3248',count:50 , price:92000},
+                          {imgSrc:'/images/coolwater.jpg',title:'کول واتر',category:'ادکلن',id:'8911',count:45 , price:299000},
+                          {imgSrc:'/images/shabnam.jpg',title:'شبنم',category:'شامپو',id:'3966',count:80 , price:24000},
+                          {imgSrc:'/images/spelendor.jpg',title:'اسپلندور',category:'ادکلن',id:'1397',count:15 , price:600000},
+                          {imgSrc:'/images/tomford.jpg',title:'تام فورد',category:'ادکلن',id:'5202',count:9 , price:998000},
+                          {imgSrc:'/images/clear.jpg',title:'کلیر',category:'شامپو',id:'3000',count:62, price:130000},   
                         ]
