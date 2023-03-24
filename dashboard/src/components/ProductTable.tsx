@@ -11,7 +11,7 @@ type PropsType= {
   
 const Table: React.FC<PropsType> = ({ data , headers , hide ,sortByHeader }) => {
 
-    const {activeColor , theme }=useMyContext();
+    const {activeColor }=useMyContext();
     const [sortKey, setSortKey] = useState<string>('');  
   
     const handleSort = (key: string) => {
@@ -32,14 +32,14 @@ const Table: React.FC<PropsType> = ({ data , headers , hide ,sortByHeader }) => 
     : data;
   
     return (
-      <table style={{borderColor:activeColor}} className="w-full md:w-auto border-spacing-y-2 text-sm md:text-lg shadow-xl rounded-xl ">
+      <table style={{borderColor:activeColor }} className="w-full md:w-auto border-spacing-y-2 text-sm md:text-lg shadow-xl rounded-xl dark:bg-gray-700 dark:text-gray-200 dark:shadow-gray-500 dark:shadow-lg ">
        
         <thead >
           <tr  >
             {headers ? headers.map((header) => (
               <th className={` font-normal md:px-8 lg:px-10 px-1 py-2 ${sortByHeader!==undefined && sortByHeader.includes(header) && 'cursor-pointer'}`} 
                 onClick={()=>handlerSortHeader(header)} key={header}>{header} 
-                <ChevronUpDownIcon className={`inline text-blue-800 w-0 ${sortByHeader!==undefined && sortByHeader.includes(header) && 'w-5'}`}/>
+                <ChevronUpDownIcon className={`inline  text-blue-800 dark:text-blue-400 w-0 ${sortByHeader!==undefined && sortByHeader.includes(header) && 'w-5 mr-0.5'}`}/>
               </th>
               ))   
                 // if headers undefind 
