@@ -56,13 +56,13 @@ const Table: React.FC<PropsType> = ({ data , headers , hide ,sortByHeader }) => 
           </tr>
          </thead>
         
-        <tbody className='font-light'>
+        <tbody className='font-light '>
         {sortedData.map((item:any) => (
           <tr key={item.id} className="text-center  ">
             {Object.keys(item).map((key) =>
               key === 'imgSrc' ? (
-                <td key={key} className="flex items-end py-2 justify-center">
-                  <img className='h-12 w-12 rounded-md' src={item[key]} alt="" />
+                <td key={key} className="flex items-end py-2 px-1 justify-center">
+                  <img className='sm:h-12 sm:w-12 w-10 h-10 rounded-md' src={item[key]} alt="" />
                 </td>
               ) : key!=hide ?  (
                 <td key={key}>{item[key]}</td>

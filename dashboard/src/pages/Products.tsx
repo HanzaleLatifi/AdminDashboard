@@ -7,7 +7,7 @@ import { useMyContext } from '../context/ContextProvider';
 const Products = () => {
   const {activeColor , theme}=useMyContext()
   return (
-    <div className='w-full  p-4 md:p-8'>
+    <div className='w-full min-h-screen  p-4 md:p-8'>
         <div className='w-full  flex justify-between mb-6'>
           <button style={{backgroundColor:activeColor}} className='text-white md:w-44 flex items-center justify-center gap-2 px-4 py-2 rounded-lg'>
               <span>افزودن محصول</span>
