@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { useMyContext } from '../context/ContextProvider';
+import {ChevronUpDownIcon} from '@heroicons/react/24/outline'
 
 type PropsType= {
   data: Array<{ [key: string]: any }>;
   headers?: string[];
   hide ?:any  
+  sortByHeader?:string[]
  }
   
-const Table: React.FC<PropsType> = ({ data , headers , hide }) => {
+const Table: React.FC<PropsType> = ({ data , headers , hide ,sortByHeader }) => {
 
     const {activeColor , theme }=useMyContext();
-    const [sortKey, setSortKey] = useState<string>('');
+    const [sortKey, setSortKey] = useState<string>('');  
   
     const handleSort = (key: string) => {
       setSortKey(key);
@@ -30,22 +32,30 @@ const Table: React.FC<PropsType> = ({ data , headers , hide }) => {
     : data;
   
     return (
-      <table style={{borderColor:activeColor}} className="w-full md:w-auto border-spacing-y-2 text-sm md:text-lg shadow-xl">
+      <table style={{borderColor:activeColor}} className="w-full md:w-auto border-spacing-y-2 text-sm md:text-lg shadow-xl rounded-xl ">
+       
         <thead >
-          <tr  className=''>
+          <tr  >
             {headers ? headers.map((header) => (
-            <th className='cursor-pointer font-normal md:px-8 lg:px-10 px-1 py-2  ' onClick={()=>handlerSortHeader(header)} key={header}>{header}</th>
-            )) : Object.keys(data[0]).map((key) => (
-              <th
-                key={key}
-                onClick={() => handleSort(key)}
-                className="md:px-8 px-1 py-2 cursor-pointer font-normal"
-              >
-                {key}
+              <th className={` font-normal md:px-8 lg:px-10 px-1 py-2 ${sortByHeader!==undefined && sortByHeader.includes(header) && 'cursor-pointer'}`} 
+                onClick={()=>handlerSortHeader(header)} key={header}>{header} 
+                <ChevronUpDownIcon className={`inline text-blue-800 w-0 ${sortByHeader!==undefined && sortByHeader.includes(header) && 'w-5'}`}/>
               </th>
-            ))}
+              ))   
+                // if headers undefind 
+                  : 
+                  Object.keys(data[0]).map((key) => (
+                    <th
+                      key={key}
+                      onClick={() => handleSort(key)}
+                      className="md:px-8 px-1 py-2 cursor-pointer font-normal"
+                    >
+                      {key}
+                    </th>
+              ))}
           </tr>
-        </thead>
+         </thead>
+        
         <tbody className='font-light'>
         {sortedData.map((item:any) => (
           <tr key={item.id} className="text-center  ">
@@ -61,6 +71,7 @@ const Table: React.FC<PropsType> = ({ data , headers , hide }) => {
           </tr>
         ))}
         </tbody>
+      
       </table>
     );
   };

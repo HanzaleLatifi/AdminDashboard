@@ -19,7 +19,7 @@ const Products = () => {
           </button>
         </div>
         <div className='flex items-center justify-center '>
-          <Table data={products} headers={['عکس','نام محصول','دسته','تعداد','قیمت']} hide="id"/>
+          <Table data={products} headers={['عکس','نام محصول','دسته','تعداد','قیمت']} hide="id" sortByHeader={['قیمت','تعداد']}/>
         </div>
     </div>
   )
