@@ -4,11 +4,44 @@ import { products } from '../data/dummy';
 import {PlusIcon,PrinterIcon} from '@heroicons/react/24/outline'
 import { useMyContext } from '../context/ContextProvider';
 import { useState } from 'react';
+import * as Yup from 'yup';
+import { useFormik } from 'formik';
+import FormikInput from '../components/inputs/FormikInputs';
+
+// --- for form data
+const initialValues={
+  title: '',
+  price: '',
+  category: '',
+  count: ''
+}
+
+const onSubmit=(values:any)=>{
+  console.log(values)
+}
+
+const validationSchema = Yup.object().shape({
+  title: Yup.string().required('لطفا نام محصول را وارد کنید'),
+  price: Yup.number().required('قیمت محصول را وارد کنید'),
+  category: Yup.string().required('دسته محصول را انتخاب کنید'),
+  count: Yup.number().required('تعداد محصول را مشخص کنید')
+});
+
+// -----------
 
 const Products = () => {
     const [showModal, setShowModal] = useState(false);
-    const {activeColor , theme}=useMyContext();
+    const {activeColor}=useMyContext();
 
+    const formik = useFormik(
+      {
+          initialValues,
+          onSubmit,
+          validationSchema,
+          validateOnMount: true,
+
+      }
+    )
     const handleShowModal = () => {
       setShowModal(true);
     };
@@ -16,6 +49,7 @@ const Products = () => {
     const handleCloseModal = () => {
       setShowModal(false);
     };
+
   return (
     <div className='w-full min-h-screen  p-4 md:p-8'>
 
@@ -41,8 +75,16 @@ const Products = () => {
           onClick={handleCloseModal}
         >
           <div onClick={(e)=>e.stopPropagation()} className="bg-white  dark:bg-gray-500 p-4 rounded shadow-xl">
-            <h2 className="text-lg font-bold mb-2">Popup Content</h2>
-            <p>Some text goes here...</p>
+              <form className="Form" onSubmit={formik.handleSubmit}>
+                <FormikInput name="title" formik={formik}  />
+                <FormikInput name="price" formik={formik}  />
+                <FormikInput name="count" formik={formik}  />
+                <FormikInput name="category" formik={formik}  />
+                <div className='flex items-center justify-center gap-x-2 my-4'>
+                  <button style={{backgroundColor:activeColor}} className="text-white px-4 py-2 rounded-lg disabled:bg-gray-500" type="submit" disabled={!formik.isValid}>ثبت محصول</button>
+                  <button style={{borderColor:activeColor , color:activeColor}} className="px-4 py-2 border rounded-lg" type="button" >انصراف</button>
+                </div>
+              </form>
           </div>
         </div>
          )} 
