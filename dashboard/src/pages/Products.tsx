@@ -6,7 +6,8 @@ import { useMyContext } from '../context/ContextProvider';
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import FormikInput from '../components/inputs/FormikInputs';
+import FormikInput from '../components/Formik/FormikInputs';
+import FormikSelect from '../components/Formik/FormikSelect';
 
 // --- for form data
 const initialValues={
@@ -26,6 +27,12 @@ const validationSchema = Yup.object().shape({
   category: Yup.string().required('دسته محصول را انتخاب کنید'),
   count: Yup.number().required('تعداد محصول را مشخص کنید')
 });
+
+const selectOptions=[ 
+  {value:'od' , label:'ادکلن'},
+  {value:'shamp' , label:'شامپو'},
+  {value:'cr' , label:'کرم'},
+]
 
 // -----------
 
@@ -79,7 +86,7 @@ const Products = () => {
                 <FormikInput name="title" formik={formik} type="text" placeholder='نام محصول' />
                 <FormikInput name="price" formik={formik} type="number" placeholder='قیمت محصول' />
                 <FormikInput name="count" formik={formik} type="number" placeholder='تعداد' />
-                <FormikInput name="category" formik={formik} placeholder="دسته"  />
+                <FormikSelect name="category" formik={formik} selectOptions={selectOptions} placeholder="انتخاب دسته"   />
                 <div className='flex items-center justify-center gap-x-2 my-4'>
                   <button style={{backgroundColor:activeColor}} className="text-white px-4 py-2 rounded-lg disabled:!bg-gray-300 disabled:cursor-not-allowed" type="submit" disabled={!formik.isValid}>ثبت محصول</button>
                   <button onClick={handleCloseModal} style={{borderColor:activeColor , color:activeColor}} className="px-4 py-2 border rounded-lg" type="button" >انصراف</button>
