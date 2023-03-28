@@ -9,7 +9,7 @@ import { useFormik } from 'formik';
 import FormikInput from '../components/Formik/FormikInputs';
 import FormikSelect from '../components/Formik/FormikSelect';
 
-// --- for form data
+// --- for form data in Modal
 const initialValues={
   title: '',
   price: '',
@@ -71,9 +71,11 @@ const Products = () => {
           </button>
         </div>
 
+        {/* --- Table Strat */}
         <div className='flex items-center justify-center '>
           <Table data={products} headers={['عکس','نام محصول','دسته','تعداد','قیمت']} hide="id" sortByHeader={['قیمت','تعداد']}/>
         </div>
+        {/* --- Table End  */}
 
         {/*---- Modal Start ---- */}
         {showModal && (

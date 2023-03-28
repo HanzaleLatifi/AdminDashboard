@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <div className='p-8'>
 
-      {/* welcome */}
+      {/* --- welcome banner --- */}
        <section className="bg-white mb-12 md:mb-10 shadow-lg p-4 md:p-8  dark:text-gray-200 dark:bg-secondary-dark-bg h-56 md:h-44 rounded-xl w-full  bg-hero-pattern dark:bg-hero-dark-pattern bg-no-repeat bg-cover bg-center transition-all">
           <span className='text-gray-700  text-2xl  dark:text-white drop-shadow-xl' >
             خوش آمدید
@@ -58,6 +58,8 @@ const Home = () => {
               </PDFDownloadLink>        
           </div>
        </section>
+       {/* --- End wellcome --- */}
+
        <section className='mb-12 grid md:grid-cols-4 grid-cols-1 gap-4  '>
             <PercentageCard  icon={<CurrencyDollarIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={4} title={'میزان سود کل'} type="asc"/>
             <PercentageCard  icon={<ShoppingCartIcon className='md:h-10 md:w-10 p-1 h-14 w-14' style={{color:activeColor}}/>} percent={8} title={'کالاهای فروخته شده'} type="asc"/>
@@ -65,9 +67,8 @@ const Home = () => {
             <PercentageCard  icon={<EyeIcon className='md:h-10 md:w-10 p-1 h-14 w-14 ' style={{color:activeColor}}/>} percent={6} title={'بازدید از فروشگاه'} type="asc"/>
        </section>
 
-       {/* charts */}
+       {/* --- charts start --- */}
        <section className=' grid grid-cols-1 md:grid-cols-3 md:gap-x-6 gap-y-4 '>
-
             <div className='shadow-lg h-72 rounded-lg  font-semibold p-4 dark:shadow-purple-100 dark:shadow-md '>
              <h3 className=' pb-2 border-b dark:border-gray-700 dark:text-gray-200'>نمودار سنی</h3>
               <div className='flex h-full items-center justify-between '>
@@ -90,10 +91,8 @@ const Home = () => {
                 <AreaChartComponent activeColor={activeColor} data={[{name:'بالای 40 سال' , value:25},{name:'بین 20 تا 40 سال' , value:55},{name:'زیر 20 سال' , value:20},{name:'زیر 10 سال' , value:40}]}/>
               </div> 
             </div>
-
-            
-
        </section>
+       {/* --- charts End --- */}
 
     </div>
   )
