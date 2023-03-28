@@ -81,15 +81,15 @@ const Products = () => {
           className="fixed top-0 left-0 w-full h-full bg-gray-50 opacity-95 dark:bg-gray-900 dark:opacity-95 flex justify-center items-center"
           
         >
-          <div  className="bg-white  dark:bg-gray-500 p-4 rounded shadow-xl">
+          <div  className="bg-white  dark:bg-gray-700 p-4 rounded-lg shadow-xl">
               <form className="p-3 " onSubmit={formik.handleSubmit} >
                 <FormikInput name="title" formik={formik} type="text" placeholder='نام محصول' />
                 <FormikInput name="price" formik={formik} type="number" placeholder='قیمت محصول' />
                 <FormikInput name="count" formik={formik} type="number" placeholder='تعداد' />
-                <FormikSelect name="category" formik={formik} selectOptions={selectOptions} placeholder="انتخاب دسته"   />
+                <FormikSelect name="category" formik={formik} selectOptions={selectOptions} placeholder="انتخاب دسته" activeColor={activeColor}  />
                 <div className='flex items-center justify-center gap-x-2 my-4'>
                   <button style={{backgroundColor:activeColor}} className="text-white px-4 py-2 rounded-lg disabled:!bg-gray-300 disabled:cursor-not-allowed" type="submit" disabled={!formik.isValid}>ثبت محصول</button>
-                  <button onClick={handleCloseModal} style={{borderColor:activeColor , color:activeColor}} className="px-4 py-2 border rounded-lg" type="button" >انصراف</button>
+                  <button onClick={handleCloseModal} style={{borderColor:activeColor , color:activeColor}} className="px-4 py-2  border rounded-lg" type="button" >انصراف</button>
                 </div>
               </form>
           </div>

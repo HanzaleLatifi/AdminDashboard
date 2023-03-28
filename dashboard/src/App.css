@@ -5,4 +5,6 @@
 @import url('font.css');
 html {
     font-family: iranyekan;
+    scroll-behavior: smooth;
 }
+
