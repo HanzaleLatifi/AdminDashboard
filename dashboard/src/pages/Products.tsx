@@ -5,7 +5,7 @@ import {PlusIcon,PrinterIcon} from '@heroicons/react/24/outline'
 import { useMyContext } from '../context/ContextProvider';
 import { useState } from 'react';
 import * as Yup from 'yup';
-import { useFormik } from 'formik';
+import { Formik, useFormik } from 'formik';
 import FormikInput from '../components/Formik/FormikInputs';
 import FormikSelect from '../components/Formik/FormikSelect';
 
@@ -17,9 +17,10 @@ const initialValues={
   count: ''
 }
 
-const onSubmit=(values:any)=>{
+const onSubmit = (values:any, { resetForm }: { resetForm: () => void }) => {
   console.log(values)
-}
+  resetForm();
+};
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required('لطفا نام محصول را وارد کنید'),
@@ -40,6 +41,7 @@ const Products = () => {
     const [showModal, setShowModal] = useState(false);
     const {activeColor}=useMyContext();
 
+ 
     const formik = useFormik(
       {
           initialValues,
@@ -90,7 +92,7 @@ const Products = () => {
                 <FormikInput name="count" formik={formik} type="number" placeholder='تعداد' />
                 <FormikSelect name="category" formik={formik} selectOptions={selectOptions} placeholder="انتخاب دسته" activeColor={activeColor}  />
                 <div className='flex items-center justify-center gap-x-2 my-4'>
-                  <button style={{backgroundColor:activeColor}} className="text-white px-4 py-2 rounded-lg disabled:!bg-gray-300 disabled:cursor-not-allowed" type="submit" disabled={!formik.isValid}>ثبت محصول</button>
+                  <button  style={{backgroundColor:activeColor}} className="text-white px-4 py-2 rounded-lg disabled:!bg-gray-300 disabled:cursor-not-allowed" type="submit" disabled={!formik.isValid}>ثبت محصول</button>
                   <button onClick={handleCloseModal} style={{borderColor:activeColor , color:activeColor}} className="px-4 py-2  border rounded-lg" type="button" >انصراف</button>
                 </div>
               </form>
