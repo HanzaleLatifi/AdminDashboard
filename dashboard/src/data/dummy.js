@@ -68,7 +68,7 @@ export const links = [
                            ]
 
   ;
-  export const products=[ {imgSrc:'/images/sauvage.jpg',title:'ساویج دیور',category:'ادکلن',id:'7800',count:10 , price:798000},
+  export const myProducts=[ {imgSrc:'/images/sauvage.jpg',title:'ساویج دیور',category:'ادکلن',id:'7800',count:10 , price:798000},
                           {imgSrc:'/images/zedlak.jpg',title:' ضدلک',category:'کرم',id:'3248',count:50 , price:92000},
                           {imgSrc:'/images/coolwater.jpg',title:'کول واتر',category:'ادکلن',id:'8911',count:45 , price:299000},
                           {imgSrc:'/images/shabnam.jpg',title:'شبنم',category:'شامپو',id:'3966',count:80 , price:24000},

@@ -1,6 +1,6 @@
 import Table from '../components/ProductTable';
 import React  from 'react';
-import { products } from '../data/dummy';
+import { myProducts } from '../data/dummy';
 import {PlusIcon,PrinterIcon} from '@heroicons/react/24/outline'
 import { useMyContext } from '../context/ContextProvider';
 import { useState } from 'react';
@@ -17,10 +17,7 @@ const initialValues={
   count: ''
 }
 
-const onSubmit = (values:any, { resetForm }: { resetForm: () => void }) => {
-  console.log(values)
-  resetForm();
-};
+
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required('لطفا نام محصول را وارد کنید'),
@@ -30,16 +27,42 @@ const validationSchema = Yup.object().shape({
 });
 
 const selectOptions=[ 
-  {value:'od' , label:'ادکلن'},
-  {value:'shamp' , label:'شامپو'},
-  {value:'cr' , label:'کرم'},
+  {value:'ادکلن' , label:'ادکلن'},
+  {value:'شامپو' , label:'شامپو'},
+  {value:'کرم' , label:'کرم'},
 ]
 
 // -----------
 
+type productType={
+  imgSrc?:string
+  title:string
+  category:string
+  id:number|string
+  count :number
+  price:number
+}
+
 const Products = () => {
     const [showModal, setShowModal] = useState(false);
+    const [products, setProducts] = useState<productType[]>(myProducts);
+    
     const {activeColor}=useMyContext();
+
+    const onSubmit = (values:any, { resetForm }: { resetForm: () => void }) => {
+      const newProduct:productType = {
+        imgSrc:'/images/random.jpg' || values.imgSrc , //default img or user img .
+        title:values.title,
+        id: Math.floor(Math.random() * 1000), // generate a random id
+        category:values.category,
+        count:values.count,
+        price:values.price
+      };
+      setProducts([...products , newProduct])
+      
+      console.log(values)
+      resetForm();
+    };
 
  
     const formik = useFormik(
@@ -51,6 +74,7 @@ const Products = () => {
 
       }
     )
+    
     const handleShowModal = () => {
       setShowModal(true);
     };
