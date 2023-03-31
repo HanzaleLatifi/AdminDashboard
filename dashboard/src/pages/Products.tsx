@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import { Formik, useFormik } from 'formik';
 import FormikInput from '../components/Formik/FormikInputs';
 import FormikSelect from '../components/Formik/FormikSelect';
+import { toast } from 'react-hot-toast';
 
 // --- for form data in Modal
 const initialValues={
@@ -58,10 +59,10 @@ const Products = () => {
         count:values.count,
         price:values.price
       };
-      setProducts([...products , newProduct])
-      
-      console.log(values)
+      setProducts([...products , newProduct]) 
+      toast.success('محصول اضافه شد');
       resetForm();
+      handleCloseModal();
     };
 
  

@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import ThemeSetting from './components/ThemeSetting';
 import {useMyContext, useMyContextActions } from './context/ContextProvider';
 import Products from './pages/Products';
+import  { Toaster } from 'react-hot-toast';
 
 
 
@@ -29,13 +30,17 @@ const App=()=>{
 
               <ThemeSetting/> 
 
+              <Toaster position='top-center'/> 
+
+
               <div className='flex dark:bg-gray-800 transition-all'>
                   <Sidebar/>
                   <div className='w-full'>
                       <header className='w-full dark:bg-gray-700'>
                           <Navbar/>
                       </header>
-                      
+
+
                       <Routes>
                           <Route path="/dashboard" element={(<Home/>)} />
                           <Route path="/products" element={(<Products/>)} />
