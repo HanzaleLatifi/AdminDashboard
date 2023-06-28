@@ -52,7 +52,7 @@ const Products = () => {
 
     const onSubmit = (values:any, { resetForm }: { resetForm: () => void }) => {
       const newProduct:productType = {
-        imgSrc:'/images/random.jpg' || values.imgSrc , //default img or user img .
+        imgSrc:values.imgSrc || '/images/random.jpg' , //default img or user img .
         title:values.title,
         id: Math.floor(Math.random() * 1000), // generate a random id
         category:values.category,
