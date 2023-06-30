@@ -76,3 +76,17 @@ export const links = [
                           {imgSrc:'/images/tomford.jpg',title:'تام فورد',category:'ادکلن',id:'5202',count:9 , price:998000},
                           {imgSrc:'/images/clear.jpg',title:'کلیر',category:'شامپو',id:'3000',count:62, price:130000},   
                         ]
+
+  export const orders=[ {id:'7800',orderDate:'1402/02/14' ,customer:'فاطمه شعبانی',address:'فارس-فسا',detail:[{title:'ساویج دیور',count:1},{title:'ضدلک',count:2}]},
+                          {id:'3248', orderDate:'1402/05/24',customer:'محمدرضا شیخی',address:'بوشهر-خشت',detail:[{title:'کول واتر',count:2}]},
+                          {id:'8911', orderDate:'1401/02/20',customer:'داوود فرجی',address:'هرمزگان-بندرعباس',detail:[{title:'تام فورد',count:1}]},
+                          {id:'3966', orderDate:'1402/08/04',customer:'پوریا رضایی',address:'فارس-کازرون',detail:[{title:'شبنم',count:4}]},
+                          {id:'1397' , orderDate:'1402/03/14',customer:'فاضل صادقی',address:'فارس-کوار',detail:[{title:'ساویج دیور',count:1}]},
+                          {id:'5202',  orderDate:'1400/02/14',customer:'یاسمن طاهری',address:'بوشهر-سیراف',detail:[{title:'ضدلک',count:2}]},
+                          {id:'3445', orderDate:'1402/06/11',customer:'حسین حمیدی',address:'فارس-شیراز',detail:[{title:'ضدلک',count:2}]},   
+                          {id:'3000', orderDate:'1402/08/30',customer:'مریم صلاحی',address:'فارس-فراشبند',detail:[{title:'ضدلک',count:1}]},   
+                        ]
+
+
+  
+  
