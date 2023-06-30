@@ -10,6 +10,7 @@ import ThemeSetting from './components/ThemeSetting';
 import {useMyContext, useMyContextActions } from './context/ContextProvider';
 import Products from './pages/Products';
 import  { Toaster } from 'react-hot-toast';
+import Orders from './pages/Orders';
 
 
 
@@ -45,7 +46,7 @@ const App=()=>{
                           <Route path="/dashboard" element={(<Home/>)} />
                           <Route path="/products" element={(<Products/>)} />
                           <Route path="/customers" element={(<Home/>)} />
-                          <Route path="/orders" element={(<Home/>)} />
+                          <Route path="/orders" element={(<Orders/>)} />
                           <Route path="/calculater" element={(<Home/>)} />
                           <Route path="/expense" element={(<Home/>)} />
                           <Route path="/login" element={(<Home/>)} />
